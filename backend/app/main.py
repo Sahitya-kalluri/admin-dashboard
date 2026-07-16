@@ -23,6 +23,11 @@ app.include_router(orders.router)
 app.include_router(analytics.router)
 
 
+@app.get("/")
+def root():
+    return {"message": "Admin Dashboard API is running"}
+
+
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
