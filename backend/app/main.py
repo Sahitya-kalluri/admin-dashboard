@@ -11,7 +11,10 @@ app = FastAPI(title="Admin Dashboard API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # add your deployed frontend URL here too
+    allow_origins=[
+        "http://localhost:3000",
+        "https://admin-dashboard-iupp.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
