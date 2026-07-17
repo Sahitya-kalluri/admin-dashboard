@@ -3,6 +3,12 @@ import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
 
+if (!process.env.REACT_APP_API_URL && process.env.NODE_ENV === "production") {
+  console.warn(
+    "REACT_APP_API_URL is not set. The frontend is defaulting to http://localhost:8000, which will fail in production unless the backend is accessible at localhost from the browser."
+  );
+}
+
 const client = axios.create({ baseURL: BASE_URL });
 
 // Attach the JWT to every request once the user is logged in

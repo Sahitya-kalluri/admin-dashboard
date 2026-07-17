@@ -53,7 +53,10 @@ Open http://localhost:3000 and log in with `admin@demo.com` / `admin123`.
 ## Deployment
 
 - **Backend + DB:** Render (Web Service + attach a Postgres instance, set `DATABASE_URL`)
-- **Frontend:** Vercel (set `REACT_APP_API_URL` to the deployed backend URL)
+- **Frontend:** Vercel
+  1. Add environment variable `REACT_APP_API_URL` with your deployed backend URL.
+  2. Redeploy the Vercel site.
+  3. If the deployed app still calls `http://localhost:8000`, the env var is missing.
 
 ## Project structure
 
